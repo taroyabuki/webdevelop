@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style type="text/css">
+      html, body { height: 100%; }
+    </style>
+    <!-- 「yabukiweb」の部分は，自分のアプリケーションIDで置き換える。 -->
+    <script src="https://map.yahooapis.jp/js/V1/jsapi?appid=yabukiweb"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="yaddressmaps.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#button").click(function() {
+          var address = $("#address").val(); // input要素の値を取得
+          drawMap(address); // 地図を生成する
+        });
+      });
+    </script>
+    <title>指定した住所を中心とする地図</title>
+  </head>
+  <body>
+    <p>
+      <input id="address" type="text" value="東京都世田谷区新町3丁目" size="50" />
+      <button id="button">地図を作る</button>
+    </p>
+    <div id="map_canvas" style="width:100%; height:90%;"></div>
+  </body>
+</html>
