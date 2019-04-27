@@ -56,7 +56,7 @@ docker-compose down
 
 ```bash
 docker-compose down
-docker build -t docker_php myphp
+docker build -t webdevelop_php myphp
 docker-compose up -d
 ```
 
