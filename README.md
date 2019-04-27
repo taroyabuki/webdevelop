@@ -23,9 +23,8 @@ git clone https://github.com/taroyabuki/webdevelop.git
 
 ## 起動
 
-docker-compose.ymlがある場所で，以下を実行する．
-
 ```bash
+cd webdevelop
 docker-compose up -d
 ```
 
@@ -39,7 +38,7 @@ docker-compose down
 
 * PHPの動作確認：http://localhost/info.php
 * データベースへの接続確認：http://localhost/db.php
-* [phpMyAdmin](http://localhost:8080/)
+* [phpMyAdmin](http://localhost:8080/)（ユーザ名：`root`，パスワード：`pass`）
 
 ## 各コンテナでの作業
 
