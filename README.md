@@ -36,6 +36,8 @@ docker-compose down
 
 ## 動作確認
 
+ウェブサーバのドキュメントルートはhtmlである．info.phpやdb.phpはこのフォルダにある．
+
 * PHPの動作確認：http://localhost/info.php
 * データベースへの接続確認：http://localhost/db.php
 * [phpMyAdmin](http://localhost:8080/)（ユーザ名：`root`，パスワード：`pass`）
