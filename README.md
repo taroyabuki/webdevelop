@@ -21,6 +21,8 @@ cd /work
 git clone https://github.com/taroyabuki/webdevelop.git
 ```
 
+必須ではありませんが，[Visual Studio Code Insiders](https://code.visualstudio.com/insiders/)（ベータ版）を入れて，サイドバーのExtension（Ctrl+Shift+X）で，`Remote Development`と入力し，Remote Developmentをインストールしておくと便利です．たとえば，ホスト側にPHPを入れていなくても，コンテナのPHPを使って編集中のPHPコードの文法をチェックできます（後述）．
+
 ## 起動
 
 ```bash
@@ -28,7 +30,7 @@ cd webdevelop
 docker-compose up -d
 ```
 
-構築した環境を削除する方法は以下の通り．
+構築した環境を削除する方法は以下の通りです．
 
 ```bash
 docker-compose down
@@ -36,7 +38,7 @@ docker-compose down
 
 ## 動作確認
 
-ウェブサーバのドキュメントルートはhtmlである．info.phpやdb.phpはこのフォルダにある．
+ウェブサーバのドキュメントルートはhtmlです．info.phpやdb.phpはこのフォルダにあります．
 
 * PHPの動作確認：http://localhost/info.php
 * データベースへの接続確認：http://localhost/db.php
@@ -47,6 +49,13 @@ docker-compose down
 * MySQLが動作しているサーバを操作したい：`docker-compose exec mysql bash`．ホスト側のファイルは/root/hostでアクセスできる（`docker-compose exec mysql ls /root/host`で確認）．
 * MySQLを操作したい：`docker-compose exec mysql mysql -uroot -ppass`
 * ウェブサーバを操作したい：`docker-compose exec php bash`．ホスト側のファイルは/var/wwwでアクセスできる（`docker-compose exec php ls /var/www`で確認）．
+
+Visual Studio CodeのRemote Developmentを使うと，コンテナのPHPを使って編集中のPHPコードの文法をチェックする方法は以下の通りです．
+
+1. Ctrl+Shift+P，「Remote-Containers: Attach to Running Container...」でPHPが動作するコンテナ（/webdevelop_php_1）に接続する．
+1. File→Open Folderで「/var/www/html」を開く．
+1. PHPファイルを開いて編集する．
+1. ファイルの保存を保存する．（このとき，文法のチェックが行われる．）
 
 ## カスタマイズ
 
