@@ -3,15 +3,18 @@
 MySQL，PHP，phpMyAdminのコンテナを組み合わせて，ウェブアプリケーションの開発環境を構築します．
 ウェブアプリケーションの構築方法については，[矢吹太朗『ウェブアプリケーション構築入門』（森北出版, 2011）](https://github.com/taroyabuki/webbook2)を参照してください．
 
-作業フォルダはc:/workであることを仮定します．（自分の環境に合わせて読み替えてください．）
+作業フォルダはc:/Users/ユーザ名/work（例：c:/Users/yabuki/work）であることを仮定します．（自分の環境に合わせて読み替えてください．別の場所でもかまいませんが，Docker DesktopではなくDocker Toolboxを使う場合は「c:/Users/ユーザ名」以下にしておくといいです．）
 
 ```bash
 c:
+cd
 mkdir /work
 cd /work
 ```
 
 ## 準備
+
+### リポジトリ
 
 1. Gitをインストールする．
 1. Dockerをインストールする．
@@ -21,9 +24,21 @@ cd /work
 git clone https://github.com/taroyabuki/webdevelop.git
 ```
 
+### VS Code（オプション）
+
 必須ではありませんが，[Visual Studio Code Insiders](https://code.visualstudio.com/insiders/)（ベータ版）を入れて，サイドバーのExtension（Ctrl+Shift+X）で，`Remote Development`と入力し，Remote Developmentをインストールしておくと便利です．たとえば，ホスト側にPHPを入れていなくても，コンテナのPHPを使って編集中のPHPコードの文法をチェックできます（後述）．
 
+### ポート転送（Docker Toolboxの場合のみ）
+
+Docker DesktopではなくDocker Toolboxを使う場合は，次を実行します．
+
+```bash
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" controlvm "default" natpf1 "http,tcp,127.0.0.1,80,,80"
+```
+
 ## 起動
+
+ポート80を使うアプリは終了させておきます．（Apache HTTP Serverとか）
 
 ```bash
 cd webdevelop
