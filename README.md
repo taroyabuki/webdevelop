@@ -26,7 +26,7 @@ git clone https://github.com/taroyabuki/webdevelop.git
 
 ### VS Code（オプション）
 
-必須ではありませんが，[Visual Studio Code Insiders](https://code.visualstudio.com/insiders/)（ベータ版）を入れて，サイドバーのExtension（Ctrl+Shift+X）で，`Remote Development`と入力し，Remote Developmentをインストールしておくと便利です．たとえば，ホスト側にPHPを入れていなくても，コンテナのPHPを使って編集中のPHPコードの文法をチェックできます（後述）．
+必須ではありませんが，Visual Studio Codeを入れて，サイドバーのExtension（Ctrl+Shift+X）で，`Remote Development`と入力し，Remote Developmentをインストールしておくと便利です．たとえば，ホスト側にPHPを入れていなくても，コンテナのPHPを使って編集中のPHPコードの文法をチェックできます（後述）．
 
 ### ポート転送（Docker Toolboxの場合のみ）
 
