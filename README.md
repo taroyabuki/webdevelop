@@ -45,7 +45,7 @@ cd webdevelop
 docker-compose up -d
 ```
 
-構築した環境を削除する方法は以下の通りです．
+構築した環境を削除する方法は次のとおりです．
 
 ```bash
 docker-compose down
@@ -61,11 +61,11 @@ docker-compose down
 
 ## 各コンテナでの作業
 
-* MySQLが動作しているサーバを操作したい：`docker-compose exec mysql bash`．ホスト側のファイルは/root/hostでアクセスできる（`docker-compose exec mysql ls /root/host`で確認）．
-* MySQLを操作したい：`docker-compose exec mysql mysql -uroot -ppass`
-* ウェブサーバを操作したい：`docker-compose exec php bash`．ホスト側のファイルは/var/wwwでアクセスできる（`docker-compose exec php ls /var/www`で確認）．
+* MySQLが動作しているサーバを操作したい：`docker-compose exec mysql bash`でログインする．ホスト側のファイルは/root/hostでアクセスできる（`docker-compose exec mysql ls /root/host`で確認）．
+* MySQLを操作したい：`docker-compose exec mysql mysql -uroot -ppass`で対話的に操作する．
+* ウェブサーバを操作したい：`docker-compose exec php bash`でログインする．ホスト側のファイルは/var/wwwでアクセスできる（`docker-compose exec php ls /var/www`で確認）．
 
-Visual Studio CodeのRemote Developmentを使うと，コンテナのPHPを使って編集中のPHPコードの文法をチェックする方法は以下の通りです．
+Visual Studio CodeのRemote Developmentを使うと，コンテナのPHPを使って編集中のPHPコードの文法をチェックする方法は次のとおりです．
 
 1. Ctrl+Shift+P，「Remote-Containers: Attach to Running Container...」でPHPが動作するコンテナ（/webdevelop_php_1）に接続する．
 1. File→Open Folderで「/var/www/html」を開く．
@@ -76,7 +76,7 @@ Visual Studio CodeのRemote Developmentを使うと，コンテナのPHPを使�
 
 三つのイメージ（mysql:5，phpmyadmin/phpmyadmin，php:7.2-apache）を使っています．
 カスタマイズしているのはphp:7.2-apacheだけなので，追加のカスタマイズもこれに対してするといいでしょう．
-変更をmyphp/Dockerfileに記述してから，以下を実行してください．
+変更をmyphp/Dockerfileに記述してから，次を実行してください．
 
 ```bash
 docker-compose down
