@@ -70,7 +70,7 @@ Visual Studio CodeのRemote Developmentを使うと，コンテナのPHPを使�
 1. Ctrl+Shift+P，「Remote-Containers: Attach to Running Container...」でPHPが動作するコンテナ（/webdevelop_php_1）に接続する．
 1. File→Open Folderで「/var/www/html」を開く．
 1. PHPファイルを開いて編集する．
-1. ファイルの保存を保存する．（このとき，文法のチェックが行われる．）
+1. ファイルを保存する．（このとき，文法のチェックが行われる．）
 
 ## カスタマイズ
 
