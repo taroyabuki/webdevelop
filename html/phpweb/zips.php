@@ -2,17 +2,14 @@
  
 //検索キーワードが無ければ終了
 if (isset($_GET['q'])) { //（注：書籍版とは違っています）
- 
-  //データベースに接続
-  $dbServer = getenv('MYSQL_PORT_3306_TCP_ADDR');
-  $db = new PDO("mysql:host=$dbServer;dbname=mydb", 'test', 'pass',
-                  array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+  require_once('../db.php');
+
   //検索
   $query = 'SELECT code,address1,address2,address3,address4,office '
           . 'FROM zip WHERE code LIKE ? ORDER BY code LIMIT 20';
   $stmt = $db->prepare($query);
   $stmt->execute(array($_GET['q'] . '%'));
- 
+
   //結果を1件ずつ処理する
   echo '<table>';
   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

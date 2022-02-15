@@ -1,27 +1,39 @@
-mysql:
-  image: mysql:5
-  environment:
-    - MYSQL_ROOT_PASSWORD=pass
-    - MYSQL_DATABASE=docker
-    - MYSQL_USER=docker
-    - MYSQL_PASSWORD=docker
-  ports:
-    - "3306:3306"
-  volumes:
-    - .:/root/host
+version: "3"
 
-php:
-  build: myphp
-  ports:
-    - "80:80"
-  volumes:
-    - .:/var/www
-  links:
-    - "mysql"
+#(1)
+volumes:
+  my_volume:
 
-phpmyadmin:
-  image: phpmyadmin/phpmyadmin
-  ports:
-    - "8080:80"
-  links:
-    - "mysql:db"
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      #(2)
+      MYSQL_ROOT_PASSWORD: pass
+      #(3)
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: test
+      MYSQL_PASSWORD: pass
+    volumes:
+      - my_volume:/var/lib/mysql #(4)
+      - .:/root/host #(5)
+
+  php:
+    build: myphp #(6)
+    restart: always
+    ports:
+      - "80:80" #(7)
+    volumes:
+      - ./html:/var/www/html #(8)
+      - .:/root/host #(9)
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8080:80" #(10)
+    environment:
+      PMA_HOST: mysql #(11)
+#      PMA_USER: root
+#      PMA_PASSWORD: pass

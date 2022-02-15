@@ -1,11 +1,3 @@
--- データベースの作成
-DROP DATABASE IF EXISTS mydb;
-CREATE DATABASE mydb DEFAULT CHARSET utf8mb4;
-USE mydb;
-
--- 権限の設定
-GRANT ALL ON mydb.* TO test@'%' IDENTIFIED BY 'pass';
-
 -- テーブルの作成
 DROP TABLE IF EXISTS zip;
 

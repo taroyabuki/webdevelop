@@ -1,3 +1,3 @@
 FROM php:7.2-apache
 RUN docker-php-ext-install pdo_mysql
-RUN apt update && apt install -y unzip
+RUN apt-get update && apt install -y unzip

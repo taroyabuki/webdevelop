@@ -1,7 +1,7 @@
 'use strict';
-/*global $, google */
+/*global $, L */
 
-var response // デバッグ用変数
+var myMap;
 
 // 住所から位置を取得し、地図を生成する
 function drawMap(myAddress) {
@@ -14,14 +14,19 @@ function drawMap(myAddress) {
       output: "json",
     },
     function(result) { // コールバック関数
-      response = result;
-      console.log(response);
+      //console.log(result);
       var lnglat = result.Feature[0].Geometry.Coordinates.split(",");
       var lng = lnglat[0];
-      var lat = lnglat[1]
-      var myCenter = new Y.LatLng(lat, lng);
-      var ymap = new Y.Map("map_canvas");
-      ymap.drawMap(myCenter, 15, Y.LayerSetId.NORMAL);
+      var lat = lnglat[1];
+      if (myMap) { // 地図があるなら削除する
+        myMap.off();
+        myMap.remove();
+      }
+      myMap = L.map("map_canvas");
+      L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+        attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
+      }).addTo(myMap);
+      myMap.setView([lat, lng], 15);
     }
   );
 }
