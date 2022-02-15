@@ -88,7 +88,7 @@ Visual Studio CodeのRemote Developmentを使うと，コンテナのPHPを使�
 
 ## カスタマイズ
 
-三つのイメージ（mysql:5，phpmyadmin/phpmyadmin，php:7.2-apache）を使っています．
+三つのイメージ（mysql:5.7，phpmyadmin/phpmyadmin，php:7.2-apache）を使っています．
 カスタマイズしているのはphp:7.2-apacheだけなので，追加のカスタマイズもこれに対してするといいでしょう．
 変更をmyphp/Dockerfileに記述してから，次を実行してください．
 
