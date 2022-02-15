@@ -9,6 +9,8 @@ MySQL，PHP，phpMyAdminのDockerコンテナを組み合わせて，ウェブ�
 
 ![](figure.svg)
 
+詳細は[docker-compose.yml](docker-compose.yml)を参照．
+
 1. Dockerのボリューム`webdevelop_my_volume`を作る．作り直したいときは`docker volume rm webdevelop_my_volume`．ちなみに，ボリュームの一覧表示は`docker volume ls`，全ボリュームの削除は`docker volume prune`．
 2. MySQLのユーザrootのパスワードは`pass`．
 3. MySQLのユーザtestのパスワードは`pass`．
