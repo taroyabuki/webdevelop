@@ -1,5 +1,5 @@
 'use strict';
-/*global $, L, document */
+/*global $, L, document, window */
 
 $(document).ready(function() {
   if ($('.address').length === 0) return; // 結果がないときはマップを描かない。
@@ -36,9 +36,12 @@ $(document).ready(function() {
           if (lat > latMax) latMax = lat;
           if (lng < lngMin) lngMin = lng;
           if (lng > lngMax) lngMax = lng;
-          myMap.fitBounds([[latMin, lngMin], [latMax, lngMax]]);
         } // ここまでコールバック関数
       );
     }
   });
+
+  window.setTimeout(function() {
+    myMap.fitBounds([[latMin, lngMin], [latMax, lngMax]]);
+  }, 1000)
 });
