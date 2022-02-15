@@ -23,7 +23,7 @@ if (isset($_GET['q']))
         drawMap(address); // 地図を生成する
       });
     </script>
-    <title>郵便番号検索フォームと地理院タイル版のマッシュアップ</title>
+    <title>郵便番号検索フォームと地理院タイルのマッシュアップ</title>
   </head>
   <body>
     <form action="" method="get">

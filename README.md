@@ -155,6 +155,8 @@ zipsmap.phpの地理院タイル版がhtml/phpweb/gsizipsmaps.phpです．
 
 [おまけ（マーカー表示）：http://localhost/phpweb/gsizipsmaps2.php?q=150](http://localhost/phpweb/gsizipsmaps2.php?q=150)
 
+![動作画面](gsizipsmaps2.png)
+
 ### 9.5 Ajaxによるリアルタイム検索
 
 zipsajaxmap.phpのYahoo!地図版がhtml/phpweb/gsizipsajaxmaps.phpです．

@@ -15,7 +15,7 @@ if (isset($_GET['q']))
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="gsizipsmaps2.js"></script>
-    <title>郵便番号検索フォームと地理院タイル版のマッシュアップ2</title>
+    <title>郵便番号検索フォームと地理院タイルのマッシュアップ2</title>
   </head>
   <body>
     <form action="" method="get">
