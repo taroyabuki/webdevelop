@@ -115,7 +115,7 @@ googlemaps.htmlの地理院タイル版がhtml/phpweb/gsimaps.htmlです．
 
 ### 4.5.2 指定した住所を中心とする地図
 
-住所から緯度と経度を求めるには，[Yahoo!ジオコーダAPI](https://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/geocoder.html)を使います．[アプリケーションID](https://e.developer.yahoo.co.jp/register)を作ってから先に進んでください．
+[Yahoo!ジオコーダAPI](https://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/geocoder.html)で住所から位置（緯度と経度）を求めます．[アプリケーションID](https://e.developer.yahoo.co.jp/register)を作ってから先に進んでください．
 
 このAPIはJSONPで呼び出します．JSONPについては第5章章末のコラム（p.75）を参照してください．
 
@@ -158,6 +158,8 @@ zipsmap.phpの地理院タイル版がhtml/phpweb/gsizipsmaps.phpです．
 [おまけ（マーカー表示）：http://localhost/phpweb/gsizipsmaps2.php?q=150](http://localhost/phpweb/gsizipsmaps2.php?q=150)
 
 ![動作画面](gsizipsmaps2.png)
+
+書籍に合わせて，[Yahoo!ジオコーダAPI](https://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/geocoder.html)で住所から位置を求めています．[郵便番号検索API](https://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/zipcodesearch.html)で郵便番号から位置を求めてもいいでしょう．
 
 ### 9.5 Ajaxによるリアルタイム検索
 
