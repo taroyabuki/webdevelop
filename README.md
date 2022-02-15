@@ -7,7 +7,7 @@ MySQL，PHP，phpMyAdminのDockerコンテナを組み合わせて，ウェブ�
 
 ## 概要
 
-![](figure.svg)
+[![概念図](figure.svg)](figure.md)
 
 詳細は[docker-compose.yml](docker-compose.yml)を参照．
 
