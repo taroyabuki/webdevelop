@@ -166,3 +166,9 @@ zipsmap.phpの地理院タイル版がhtml/phpweb/gsizipsmaps.phpです．
 zipsajaxmap.phpのYahoo!地図版がhtml/phpweb/gsizipsajaxmaps.phpです．
 
 [動作確認：http://localhost/phpweb/gsizipsajaxmaps.php](http://localhost/phpweb/gsizipsajaxmaps.php)
+
+## ライセンス
+
+Copyright (c) 2022 Taro Yabuki
+
+Released under the [MIT license](LICENSE)
