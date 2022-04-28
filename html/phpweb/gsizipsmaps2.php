@@ -25,7 +25,7 @@ if (isset($_GET['q']))
         <span id="output"></span>
       </p>
     </form>
-    <div id="map_canvas" style="float:left; width:500px; height:500px;"></div>
+    <div id="map_canvas" style="float:left; width:800px; height:500px;"></div>
     <?php require('zips.php'); ?>
   </body>
 </html>

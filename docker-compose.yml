@@ -1,6 +1,6 @@
 version: "3"
 
-#(1)
+#(1) ボリュームmy_volumeを作る．
 volumes:
   my_volume:
 
@@ -9,31 +9,29 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      #(2)
-      MYSQL_ROOT_PASSWORD: pass
-      #(3)
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: test
-      MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: pass #(2) MySQLの管理者（root）のパスワードは`pass`．
+      MYSQL_DATABASE: mydb #(3) データベースmydbにアクセスする，
+      MYSQL_USER: test     #ユーザ`test`の
+      MYSQL_PASSWORD: pass #パスワードは`pass`．
     volumes:
-      - my_volume:/var/lib/mysql #(4)
-      - .:/root/host #(5)
+      - my_volume:/var/lib/mysql #(4) my_volumeにMySQLのデータを保存する．
+      - .:/root/host #(5) ホストのフォルダwebdevelopとコンテナの/root/hostは同じ．
 
   php:
-    build: myphp #(6)
+    build: myphp #(6) PHPのためのイメージは独自のもの
     restart: always
     ports:
-      - "80:80" #(7)
+      - "80:80" #(7) localhost:80へのアクセスはphpに転送される．
     volumes:
-      - ./html:/var/www/html #(8)
-      - .:/root/host #(9)
+      - ./html:/var/www/html #(8) ホストのwebdevelop/htmlとコンテナの/var/www/htmlは同じ．
+      - .:/root/host #(9) ホストのディレクトリwebdevelopとコンテナの/root/hostは同じ（5と同様）．
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      - "8080:80" #(10)
+      - "8080:80" #(10) localhost:8080へのアクセスはphpMyAdminに転送される．
     environment:
-      PMA_HOST: mysql #(11)
+      PMA_HOST: mysql #(11) phpMyAdminの管理対象はMySQL（参照：https://hub.docker.com/r/phpmyadmin/phpmyadmin/）
 #      PMA_USER: root
 #      PMA_PASSWORD: pass

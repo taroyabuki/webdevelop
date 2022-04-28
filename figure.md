@@ -26,15 +26,13 @@ file webdevelop {
   file html
 }
 
-user-up-browser
-browser-up-php:(9) 80
-browser-up-phpmyadmin:(10) 8080
-
 mydb-up-volume:(4)
-
 webdevelop-up-mysqlfile:(5)
-webdevelop-up-phpfile1:(8)
-html-up-phpfile2:(7)
+user-up-browser
+browser-up-php:(7) 80
+webdevelop-up-phpfile1:(9)
+html-up-phpfile2:(8)
+browser-up-phpmyadmin:(10) 8080
 phpmyadmin-mysql:(11)
 
 @enduml
